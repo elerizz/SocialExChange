@@ -1,0 +1,30 @@
+.AddFriend {
+    width: 100%;
+    
+    margin:20px auto;
+}
+
+.AddFriend__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 150px;
+    gap: 5px;
+}
+
+.AddFriend__inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.AddFriend input {
+    padding: 10px;
+    border: 0;
+    outline: none;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.222);
+}
+
+.AddFriend input:focus::placeholder {
+    opacity: 0;
+}
