@@ -12,20 +12,20 @@ const AddMessage = ({ isRenderedList, onAddButton }) => {
   const onFormSubmit = (e) => {
     e.preventDefault();
 
-    // const newData = () => {
-    //   const hours = new Date().getHours();
-    //   const minutes = new Date().getMinutes();
-    //   const day = new Date().toLocaleDateString();
+    const newData = () => {
+      const hours = new Date().getHours();
+      const minutes = new Date().getMinutes();
+      const day = new Date().toLocaleDateString();
   
-    //   return (`${day.split('/').reverse().join('/')} ${hours}:${minutes}`);
-    // };
+      return (`${day.split('/').reverse().join('/')} ${hours}:${minutes}`);
+    };
 
     if (messageText) {
       POST('messages', {
         text: messageText,
         sender: localStorage.getItem("username"),
-        // date: newData()
-        date: new Date().toLocaleDateString()
+        date: newData()
+        // date: new Date().toLocaleDateString()
       })
       .then(() => {
         setMessageText('');

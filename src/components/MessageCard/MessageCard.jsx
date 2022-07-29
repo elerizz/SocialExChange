@@ -7,6 +7,12 @@ import { useState } from 'react';
 const MessageCard = ({textContent, isRenderedList, onDeleteBtn}) => {
   const [isVisibile, setVisibile] = useState(false);
   const [isDeletable, setDeletable] = useState(false);
+
+  const formatData = (date) => {
+    const [day, time] = date.split(' ');
+  
+    return `${time} ${day.split('/').reverse().join('/')}`;
+  }
   
   const onBtnClick = () => {
   
@@ -27,7 +33,7 @@ const MessageCard = ({textContent, isRenderedList, onDeleteBtn}) => {
           { textContent.sender }
         </p>
         <p className="MessageCard__info--date">
-          { textContent.date }
+        { formatData(textContent.date) }
         </p>
       </div>
       {
