@@ -6,21 +6,22 @@ import './index.css';
 const MessageCardList = ({ isRenderedList, setRenderedList, deleteCondition, filterValue }) => {
   const [messageList, setMessageList] = useState([]);
 
+  // const formatData = (date) => {
+  //   const [day, time] = date.split(' ');
+  
+  //   return ${time} ${day.split('/').reverse().join('/')};
+  // }
+
   useEffect(() => {
       GET('messages')
       .then((data) => {
-
-        if (filterValue) {
-          
+        if (filterValue) { 
           setMessageList(data.filter((message) => message.sender.toLowerCase().includes(filterValue.toLowerCase())).sort((a, b) => dateSort(a,b)));
         }
-
         else {
           setMessageList(data.sort((a, b) => dateSort(a,b)))
         }
-
        })
-      
   }, [isRenderedList, filterValue]);
 
   const dateSort = (a, b) => a.date < b.date ? 1 : -1;

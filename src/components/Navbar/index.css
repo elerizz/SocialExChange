@@ -22,9 +22,15 @@
     width: 3.5rem;
 }
 
-.title, .log_out {
+.title, .navbar_username {
     color: rgb(255, 255, 255);
-    text-shadow: 0 0 2px rgb(254, 0, 174);
+    text-shadow: 0 0 2px rgb(255, 40, 162);
+}
+
+
+.log_out {
+    color: rgb(255, 72, 72);
+    text-shadow: 0 0 2px rgb(255, 255, 255);
 }
 
 .Navbar__list {
@@ -41,7 +47,3 @@
     opacity: 60%;
     transform: scale(1.08);
 }
-
-/* .log_out {
-    color: rgb(15, 15, 15);
-} */
